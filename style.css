@@ -1,0 +1,385 @@
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --bg-color: #ffffff;
+    --text-color: #333333;
+    --border-color: #ecf0f1;
+    --button-bg-dark: #7f8c8d;  
+    --button-hover-dark: #95a5a6; 
+}
+
+[data-theme="dark"] {
+    --primary-color: #ecf0f1;
+    --secondary-color: #3498db;
+    --bg-color: #2c3e50;
+    --text-color: #ecf0f1;
+    --border-color: #34495e;
+    --button-bg-dark: #7f8c8d;
+    --button-hover-dark: #95a5a6;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: all 0.3s ease;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden; /* Remove scroll horizontal */
+    padding-bottom: 50px; /* Espaço para o copyright */
+}
+
+.h1 {
+    text-decoration: none;
+    color: #333333;  /* Cor do texto do link */
+}
+
+h1 {
+    font-size: 30px;
+    margin-left: 0;
+    cursor: pointer;
+    color: #333333;  /* Garantir a cor do texto */
+}
+
+/* HEADER FIXO */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--bg-color);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+
+.header > div {
+    display: flex;
+    gap: 10px; /* espaçamento entre os botões */
+}
+
+/* Espaçamento abaixo do header */
+.container {
+    width: 90%;
+    max-width: 1000px;
+    padding: 150px 20px 20px; 
+}
+
+/* Botões */
+.btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: var(--secondary-color);
+    color: white;
+    transition: transform 0.2s, background-color 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    background-color: #2980b9; 
+}
+
+/* Modificação no modo dark */
+[data-theme="dark"] .btn {
+    background-color: var(--button-bg-dark); /* Botões cinza no modo escuro */
+}
+
+[data-theme="dark"] .btn:hover {
+    background-color: var(--button-hover-dark); /* Hover mais escuro */
+}
+
+[data-theme="dark"] h1 {
+    color: #ecf0f1;  
+}
+
+[data-theme="dark"] .note {
+    background-color: var(--bg-color);
+    border: 2px solid #ecf0f1;  
+    box-shadow: 0 5px 15px rgba(141, 141, 141, 0.4);  
+}
+
+[data-theme="dark"] .scroll-to-top-btn {
+    background-color: #bebebe8c; /* Cinza escuro no modo dark */
+    color: #b8dbe4; /* Ícone branco no modo dark */
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.192); /* Sombra branca no modo dark */
+}
+
+/* Ícone da seta no modo dark */
+[data-theme="dark"] .scroll-to-top-btn::before {
+    color: #ecf0f1; /* Ícone branco no modo dark */
+}
+
+/* Hover no botão "Scroll to Top" no modo dark */
+[data-theme="dark"] .scroll-to-top-btn:hover {
+    background-color: #93acc7; /* Cor de fundo mais escura no modo dark */
+    box-shadow: 0 8px 15px rgba(255, 255, 255, 0.356); /* Sombra mais forte e branca no modo dark */
+    color: #333333;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    background-color: #2980b9; 
+}
+
+/* Notas */
+.notes-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px; 
+    padding-top: 80px; 
+}
+
+.note {
+    background-color: var(--bg-color);
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+    padding: 20px;
+    width: 100%;
+    max-width: 800px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.432);
+    display: flex;
+    flex-direction: column;
+}
+
+.note-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.note-title {
+    flex-grow: 1;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    background: transparent;
+    color: var(--text-color);
+}
+
+.note-title:focus {
+    outline: none;
+}
+
+.note-content {
+    flex-grow: 1;
+    resize: none;
+    background: transparent;
+    border: none;
+    color: var(--text-color);
+    font-size: 16px;
+    line-height: 1.5;
+    min-height: 150px;
+}
+
+.note-content:focus {
+    outline: none;
+}
+
+/* Ícones de ações dentro das notas */
+.note-actions .icon-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-color); /* Cor padrão do ícone */
+    font-size: 20px;
+    padding: 5px;
+    transition: color 0.3s ease;
+}
+
+/* Hover para os ícones no modo claro */
+.note-actions .icon-btn:hover {
+    transform: scale(1.1); /* Efeito de aumentar o ícone ao passar o mouse */
+}
+
+.note-actions .icon-edit:hover {
+    color: #3498db; /* Azul para editar no hover */
+}
+
+.note-actions .icon-download:hover {
+    color: #27ae60; /* Verde para download no hover */
+}
+
+.note-actions .icon-delete:hover {
+    color: #e74c3c; /* Vermelho para excluir no hover */
+}
+
+/* Alterações no modo dark */
+[data-theme="dark"] .note-actions .icon-btn:hover {
+    transform: scale(1.1); /* Efeito de aumentar o ícone */
+}
+
+[data-theme="dark"] .note-actions .icon-edit:hover {
+    color: #7f8c8d; /* Cinza mais escuro para editar no hover */
+}
+
+[data-theme="dark"] .note-actions .icon-download:hover {
+    color: #2ecc71; /* Verde claro para download no hover */
+}
+
+[data-theme="dark"] .note-actions .icon-delete:hover {
+    color: #f39c12; /* Vermelho mais claro para excluir no hover */
+}
+
+
+/* Ações na nota */
+.note-actions {
+    display: flex;
+    gap: 15px; 
+    margin-top: 15px;
+    justify-content: center; 
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-color);
+    font-size: 18px;
+    padding: 5px;
+}
+
+/* Alteração dinâmica na foto no header */
+.header .header-photo {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+/* Efeito de troca de imagem ao passar o mouse */
+.header .header-photo:hover {
+    transform: scale(1.1); 
+}
+
+.header .header-photo:hover {
+    content: url('img/photo_concluded.png'); /*  imagem de concluído ao passar o mouse */
+}
+
+/* Copyright fixo no final */
+.copyright {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--bg-color);
+    text-align: center;
+    padding: 10px;
+    border-top: 1px solid var(--border-color);
+    font-size: 0.9rem;
+    color: var(--text-color);
+}
+
+/* Estilo do botão "Scroll to Top" */
+.scroll-to-top-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 15px;
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    display: none; /* Inicialmente oculto */
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    z-index: 999;
+    transition: all 0.3s ease;
+}
+
+
+/* Hover no botão "Scroll to Top" */
+.scroll-to-top-btn:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px); /* Efeito de elevação */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5); /* Sombra mais forte */
+}
+
+
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding-top: 120px; 
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centraliza o conteúdo do container */
+    }
+
+    .header {
+        padding: 8px 15px; 
+        display: flex;
+        justify-content: flex-start;  /* Alinha os itens mais à esquerda */
+        width: 100%;  /* Garante que a header ocupe toda a largura */
+    }
+
+    .header > div {
+        gap: 10px; /* Menor espaço entre os botões */
+        display: flex;
+        justify-content: flex-start;  /* Garante que os botões fiquem à esquerda */
+        margin-left: 20px;  
+    }
+
+    .btn {
+        padding: 8px 10px; /* Botões menores */
+        font-size: 12px; /* Texto menor */
+    }
+
+    /* Container de notas */
+    .notes-container {
+        width: 100%;
+        padding-top: 20px; 
+        display: flex;
+        justify-content: center; /* Centraliza o container de notas */
+    }
+
+    .note {
+        padding: 25px;
+        width: 100%; 
+        max-width: 1000px; 
+        box-sizing: border-box; /* Para considerar padding no cálculo da largura */
+        margin: 0 auto; /* Centraliza o bloco de notas */
+        min-height: 400px;
+    }
+
+    /* Ícones de editar, download e excluir */
+    .note-actions {
+        gap: 5px; /* espaçamento entre os ícones */
+        display: flex;
+        justify-content: center; /* Centraliza os ícones dentro do bloco de notas */
+        margin-left: -100px;
+        margin-top: 0;
+    }
+
+    h1 {
+        font-size: 22px;
+        margin-left: 0; /* Alinha o título à esquerda */
+        cursor: pointer;
+    }
+
+    .scroll-to-top-btn {
+        bottom: 15px;
+        right: 15px;
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
+}

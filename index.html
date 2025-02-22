@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/photo.png">
+    <title>TaskNote</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div>
+                <img src="img/photo.png" alt="Foto" class="header-photo">
+                <a href="index.html" class="h1">
+                    <h1>TaskNote</h1>
+                </a>
+            </div>
+            <div>
+                <button class="btn" id="themeToggle">Modo Escuro</button>
+                <button class="btn" id="newNote"><i class="fas fa-plus"></i> Nova Nota</button>
+            </div>
+        </div>
+
+        <div class="notes-container" id="notesContainer">
+            <!-- Exemplo de bloco de notas -->
+            <div class="note">
+                <div class="note-header">
+                    <input type="text" class="note-title" placeholder="Título da nota">
+                    <textarea class="note-content" placeholder="Conteúdo da nota"></textarea>
+                </div>
+                <div class="note-actions">
+                    <button class="icon-btn icon-edit">
+                        <i class="fas fa-edit"></i> <!-- Ícone de editar -->
+                    </button>
+                    <button class="icon-btn icon-download">
+                        <i class="fas fa-download"></i> <!-- Ícone de download -->
+                    </button>
+                    <button class="icon-btn icon-delete">
+                        <i class="fas fa-trash"></i> <!-- Ícone de excluir -->
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- Botão "Scroll to Top" -->
+<button id="scrollToTop" class="scroll-to-top-btn">
+    ↑
+</button>
+
+
+<!-- final da página com copyright -->
+    <div class="copyright">
+        Copyright © 2025 TaskNote. All Rights Reserved.
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
