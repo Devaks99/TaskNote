@@ -1,85 +1,102 @@
-📝 TaskNote
+# 📝 TaskNote
 
-📌 TaskNote é um aplicativo web para criação e organização de notas de forma simples e eficiente. Com um design intuitivo e responsivo, permite que você gerencie suas anotações com facilidade.
-
-🚀 Tecnologias Utilizadas
-
-**JavaScript
-**HTML5
-**CSS3
+TaskNote é um aplicativo web simples e eficiente para criação e organização de notas. Com um design intuitivo e responsivo, ele permite gerenciar anotações com facilidade.
 
 ---
 
-🎨 Recursos
-✅ Modo Claro & Escuro
-✅ Criação e Edição de Notas
-✅ Exclusão de Notas
-✅ Botão Scroll to Top (Aparece apenas quando há mais de uma nota)
-✅ Totalmente Responsivo
+## 🚀 Tecnologias Utilizadas
+
+O projeto foi desenvolvido utilizando as seguintes tecnologias:
+
+- **JavaScript**
+- **HTML5**
+- **CSS3**
+
+---
+
+## 🎨 Recursos
+
+✅ Modo Claro & Escuro 🌞🌙  
+✅ Criação e Edição de Notas ✍️  
+✅ Exclusão de Notas 🗑️  
+✅ Botão "Scroll to Top" (visível apenas quando houver mais de uma nota) ⬆️  
+✅ Layout totalmente responsivo 📱💻
+
+---
+
+## 📷 Capturas de Tela
+
+### 🖥️ Modo Claro | 🌙 Modo Escuro
+![tela1 tasknote](https://github.com/user-attachments/assets/cefa5a95-6053-4cc1-8c56-dda6fd695c35)
+![tela2 dark tasknote](https://github.com/user-attachments/assets/18f494f5-c8a6-4054-aad7-f0a81aaf8918)
+
+
+
+
+### 📱 Mobile
+![tela1 mobile tasknote](https://github.com/user-attachments/assets/14effc21-ef4e-49ef-9dd2-bf3401aa8506)
+![tela2 mobile dark tasknote](https://github.com/user-attachments/assets/7f606654-8072-4e6e-be77-487aa080324a)
+
 
 
 ---
 
-📷 Capturas de Tela
-🖥️ Modo Claro
-![tela1 tasknote](https://github.com/user-attachments/assets/5bfaee8d-4536-4821-bf25-5d1b1111bbfd)
-![tela1 mobile tasknote](https://github.com/user-attachments/assets/14e69d7d-9cc1-4cc3-9f9b-317b372f1f23)
+## 📦 Instalação e Uso
 
-
-🌙 Modo Escuro
-![tela2 dark tasknote](https://github.com/user-attachments/assets/5f4ef79c-08f5-4b4e-bf1c-391d0698917a)
-![tela2 mobile dark tasknote](https://github.com/user-attachments/assets/07381735-6ea3-453a-8ce1-a1e3f97c4d69)
-
-
----
-
-📦 Instalação e Uso
-1️⃣ Clonar o repositório
-
-bater
-
-Copiar
-
-Editar
-git clone https://github.com/Devaks99/TaskNote.git
-2️⃣ Acesse a pasta do projeto
-
-bater
-
-Copiar
-
-Editar
-cd tasknote
-3️⃣ Abra o arquivo index.html no navegador
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/Devaks99/TaskNote.git
+   ```
+2. Acesse a pasta do projeto:
+   ```bash
+   cd TaskNote
+   ```
+3. Abra o arquivo `index.html` no navegador.
 
 ---
 
-⚙️ Como Usar
-Clique no botão "+ Nova Nota" para criar uma nova anotação.
-Edite o título e o conteúdo da nota conforme necessário.
-Use os ícones para editar, baixar ou excluir uma nota.
-Habilite o modo escuro clicando no botão "Modo Escuro".
-Se houver mais de uma nota, o botão "Scroll to Top" aparecerá , permitindo voltar ao topo da página rapidamente.
+## ⚙️ Como Usar
+
+1. Clique no botão "+ Nova Nota" para adicionar uma nova anotação.
+2. Edite o título e o conteúdo conforme necessário.
+3. Use os ícones para editar, baixar ou excluir uma nota.
+4. Habilite o modo escuro clicando no botão "Modo Escuro".
+5. Se houver mais de uma nota, o botão "Scroll to Top" aparecerá para facilitar a navegação.
 
 ---
 
-🔥 Demonstração
-🔗 Acesse a versão online (Caso tenha hospedado o projeto)
+## 🔥 Demonstração
 
-🤝 Contribuição
-💡 Sinta-se à vontade para contribuir com melhorias!
+🔗 [Acesse a versão online](#) *(Caso tenha hospedado o projeto)*
 
 ---
 
-Faça um fork do projeto
-Crie uma branch ( git checkout -b feature-minha-feature)
-Faça commit das suas alterações ( git commit -m 'Adicionei tal funcionalidade')
-Envie para o repositório ( git push origin feature-minha-feature)
-Crie um Pull Request
+## 🤝 Contribuição
+
+Contribuições são bem-vindas! Para contribuir:
+
+1. Faça um fork do projeto.
+2. Crie uma nova branch:
+   ```bash
+   git checkout -b feature-minha-feature
+   ```
+3. Realize as alterações necessárias e faça commit:
+   ```bash
+   git commit -m "Adicionei tal funcionalidade"
+   ```
+4. Envie para o repositório remoto:
+   ```bash
+   git push origin feature-minha-feature
+   ```
+5. Abra um Pull Request para revisão.
 
 ---
 
-📜 Licença
-📌 Este projeto está licenciado sob uma licença MIT .
+## 📜 Licença
 
-👨‍💻 Desenvolvido por Ana Karla 🚀
+Este projeto está licenciado sob a [Licença MIT](LICENSE).
+
+---
+
+👨‍💻 Desenvolvido por **Ana Karla** 🚀
+
