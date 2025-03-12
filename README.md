@@ -35,7 +35,7 @@ O projeto foi desenvolvido utilizando as seguintes tecnologias:
 
 
 ### 📱 Mobile
-![tela1 mobile tasknote](https://github.com/user-attachments/assets/14effc21-ef4e-49ef-9dd2-bf3401aa8506)
+![tela mobile tasknote](https://github.com/user-attachments/assets/e8e85bd5-8b78-4a56-b7a6-200ea4b14d76)
 ![tela mobile dark tasknote](https://github.com/user-attachments/assets/b383a73c-2a39-4fb1-8a3e-a6741d0613d2)
 
 
