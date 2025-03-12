@@ -28,14 +28,16 @@ O projeto foi desenvolvido utilizando as seguintes tecnologias:
 
 ### 🖥️ Modo Claro | 🌙 Modo Escuro
 ![tela1 tasknote](https://github.com/user-attachments/assets/cefa5a95-6053-4cc1-8c56-dda6fd695c35)
-![tela2 dark tasknote](https://github.com/user-attachments/assets/18f494f5-c8a6-4054-aad7-f0a81aaf8918)
+![tela dark tasknote](https://github.com/user-attachments/assets/4f6fbda4-52bb-4570-bd51-345bc462b9b0)
+
 
 
 
 
 ### 📱 Mobile
 ![tela1 mobile tasknote](https://github.com/user-attachments/assets/14effc21-ef4e-49ef-9dd2-bf3401aa8506)
-![tela2 mobile dark tasknote](https://github.com/user-attachments/assets/7f606654-8072-4e6e-be77-487aa080324a)
+![tela mobile dark tasknote](https://github.com/user-attachments/assets/b383a73c-2a39-4fb1-8a3e-a6741d0613d2)
+
 
 
 
