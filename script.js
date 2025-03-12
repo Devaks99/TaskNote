@@ -7,6 +7,11 @@ let notes = JSON.parse(localStorage.getItem('notes')) || [];
 
 // Inicializar
 function init() {
+    // Adiciona uma nota inicial se não houver nenhuma
+    if (notes.length === 0) {
+        notes.push({ title: '', content: '' });
+        localStorage.setItem('notes', JSON.stringify(notes));
+    }
     renderNotes();
     updateThemeButton();
 }
@@ -44,9 +49,23 @@ function createNoteElement(note, index) {
     const titleInput = noteDiv.querySelector('.note-title');
     const contentInput = noteDiv.querySelector('.note-content');
 
-    deleteBtn.addEventListener('click', () => deleteNote(index));
-    editBtn.addEventListener('click', () => editNote(contentInput));
-    downloadBtn.addEventListener('click', () => downloadNote(titleInput.value, contentInput.value));
+      // Atualizar em tempo real
+      titleInput.addEventListener('input', () => {
+        notes[index].title = titleInput.value;
+        localStorage.setItem('notes', JSON.stringify(notes));
+    });
+
+    contentInput.addEventListener('input', () => {
+        notes[index].content = contentInput.value;
+        localStorage.setItem('notes', JSON.stringify(notes));
+    });
+
+    
+    deleteBtn.addEventListener('click', () => {
+        notes.splice(index, 1);
+        localStorage.setItem('notes', JSON.stringify(notes));
+        renderNotes();
+    });
 
     return noteDiv;
 }
