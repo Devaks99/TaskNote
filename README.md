@@ -27,17 +27,15 @@ O projeto foi desenvolvido utilizando as seguintes tecnologias:
 ## 📷 Capturas de Tela
 
 ### 🖥️ Modo Claro | 🌙 Modo Escuro
-![tela1 tasknote](https://github.com/user-attachments/assets/cefa5a95-6053-4cc1-8c56-dda6fd695c35)
-![tela dark tasknote](https://github.com/user-attachments/assets/4f6fbda4-52bb-4570-bd51-345bc462b9b0)
 
-
+![nova tela tasknote](https://github.com/user-attachments/assets/3a83de2a-f345-4d14-b5ff-10fa93d7a0f8)
+![nova tela dark tasknote](https://github.com/user-attachments/assets/ca7aeb76-f8b4-41ee-b0ff-6a9a6d6bf32b)
 
 
 
 ### 📱 Mobile
 ![tela mobile tasknote](https://github.com/user-attachments/assets/e8e85bd5-8b78-4a56-b7a6-200ea4b14d76)
 ![tela mobile dark tasknote](https://github.com/user-attachments/assets/b383a73c-2a39-4fb1-8a3e-a6741d0613d2)
-
 
 
 
