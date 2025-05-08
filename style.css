@@ -108,7 +108,7 @@ h1 {
 
 [data-theme="dark"] .note {
     background-color: var(--bg-color);
-    border: 2px solid #ecf0f1;  
+    border: 2px solid #ecf0f18e;  
     box-shadow: 0 5px 15px rgba(141, 141, 141, 0.4);  
 }
 
