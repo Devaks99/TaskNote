@@ -14,6 +14,7 @@ function init() {
     }
     renderNotes();
     updateThemeButton();
+    toggleScrollToTopButton(); // Adiciona esta linha
 }
 
 // Renderizar notas
@@ -32,14 +33,13 @@ function createNoteElement(note, index) {
     noteDiv.innerHTML = `
         <div class="note-header">
             <input type="text" class="note-title" value="${note.title || 'Nova Nota'}" placeholder="Título">
-            <div class="note-actions">
-                <!-- Remover o botão de "salvar" -->
-                <button class="icon-btn edit-btn"><i class="fas fa-edit"></i></button>
-                <button class="icon-btn download-btn"><i class="fas fa-download"></i></button>
-                <button class="icon-btn delete-btn"><i class="fas fa-trash"></i></button>
-            </div>
+            <textarea class="note-content" placeholder="Comece a escrever...">${note.content}</textarea>
         </div>
-        <textarea class="note-content" placeholder="Comece a escrever...">${note.content}</textarea>
+        <div class="note-actions">
+            <button class="icon-btn edit-btn"><i class="fas fa-edit"></i></button>
+            <button class="icon-btn download-btn"><i class="fas fa-download"></i></button>
+            <button class="icon-btn delete-btn"><i class="fas fa-trash"></i></button>
+        </div>
     `;
 
     // Event listeners
@@ -49,8 +49,8 @@ function createNoteElement(note, index) {
     const titleInput = noteDiv.querySelector('.note-title');
     const contentInput = noteDiv.querySelector('.note-content');
 
-      // Atualizar em tempo real
-      titleInput.addEventListener('input', () => {
+    // Atualizar em tempo real
+    titleInput.addEventListener('input', () => {
         notes[index].title = titleInput.value;
         localStorage.setItem('notes', JSON.stringify(notes));
     });
@@ -60,11 +60,22 @@ function createNoteElement(note, index) {
         localStorage.setItem('notes', JSON.stringify(notes));
     });
 
-    
     deleteBtn.addEventListener('click', () => {
         notes.splice(index, 1);
         localStorage.setItem('notes', JSON.stringify(notes));
         renderNotes();
+    });
+
+    // Adicionar funcionalidade de download
+    downloadBtn.addEventListener('click', () => {
+        const title = titleInput.value || 'nota_sem_titulo';
+        const content = contentInput.value;
+        downloadNote(title, content);
+    });
+
+    // Adicionar funcionalidade de edição (já está implementada com os inputs)
+    editBtn.addEventListener('click', () => {
+        titleInput.focus(); // Foca no título para edição
     });
 
     return noteDiv;
@@ -98,14 +109,22 @@ function editNote(contentInput) {
 
 // Função para baixar a nota como .txt
 function downloadNote(title, content) {
-    const blob = new Blob([content], { type: 'text/plain' });
+    // Remove caracteres inválidos para nome de arquivo
+    const cleanTitle = title.replace(/[^a-zA-Z0-9áéíóúÁÉÍÓÚãõâêîôûàèìòùçÇ\s_-]/g, '');
+    
+    const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = title ? `${title}.txt` : 'nota.txt';
+    a.download = cleanTitle ? `${cleanTitle}.txt` : 'nota_sem_titulo.txt';
     document.body.appendChild(a);
     a.click();
-    document.body.removeChild(a);
+    
+    // Limpeza
+    setTimeout(() => {
+        document.body.removeChild(a);
+        window.URL.revokeObjectURL(url);
+    }, 100);
 }
 
 // Nova nota
@@ -113,6 +132,7 @@ newNoteBtn.addEventListener('click', () => {
     notes.push({ title: '', content: '' });
     localStorage.setItem('notes', JSON.stringify(notes));
     renderNotes();
+    toggleScrollToTopButton(); // Adiciona esta linha
 });
 
 // Tema dark/light

@@ -1,0 +1,115 @@
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --bg-color: #ffffffc2;
+    --text-color: #333333;
+    --border-color: #ecf0f1;
+    --button-bg-dark: #7f8c8d;  
+    --button-hover-dark: #95a5a6; 
+}
+
+[data-theme="dark"] {
+    --primary-color: #ecf0f1;
+    --secondary-color: #1a4b8c;  /* Azul mais escuro */
+    --bg-color: #0a0a0a;        /* Fundo preto mais suave */
+    --text-color: #ecf0f1;
+    --border-color: #1a4b8c;    /* Borda azul escura */
+    --button-bg-dark: #1a4b8c;   /* Azul escuro para botões */
+    --button-hover-dark: #2a5b9c; /* Azul um pouco mais claro no hover */
+    --focus-color: #2a5b9c;      /* Cor para elementos em foco */
+}
+/* ---------------------------------------------------------- */
+
+/* Modificação no modo dark para botões */
+[data-theme="dark"] .btn {
+    background-color: var(--button-bg-dark);
+    color: white;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+}
+
+[data-theme="dark"] .btn:hover {
+    background-color: var(--button-hover-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(26, 75, 140, 0.4);
+}
+/* fim do modo dark para botões */
+/* ---------------------------------------------------------- */
+
+/* H1 no dark */
+[data-theme="dark"] h1 {
+    color: #ecf0f1;  
+}
+/* fim do h1 */
+/* ---------------------------------------------------------- */
+
+/* Modo dark para as notas */
+[data-theme="dark"] .note {
+    background-color: #121212e5;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 2px 8px rgba(26, 75, 140, 0.3);
+    transition: all 0.3s ease;
+}
+[data-theme="dark"] .note-actions .icon-btn:hover {
+    transform: scale(1.1); /* Efeito de aumentar o ícone */
+}
+
+[data-theme="dark"] .note-actions .icon-edit:hover {
+    color: #7f8c8d; /* Cinza mais escuro para editar no hover */
+}
+
+[data-theme="dark"] .note-actions .icon-download:hover {
+    color: #2ecc71; /* Verde claro para download no hover */
+}
+
+[data-theme="dark"] .note-actions .icon-delete:hover {
+    color: #f39c12; /* Vermelho mais claro para excluir no hover */
+ }
+
+ [data-theme="dark"] .note-actions .icon-btn {
+    color: #4a7fc1;
+    transition: all 0.3s ease;
+}
+
+[data-theme="dark"] .note-actions .icon-btn:hover {
+    color: var(--secondary-color);
+    transform: scale(1.1);
+}
+
+/* Bordas para inputs */
+[data-theme="dark"] .note-title{
+    border-bottom: 1px solid #2a3b52;
+}
+/* fim do modo dark para notas */
+/* ---------------------------------------------------------- */
+
+/* Botão scroll to top */
+[data-theme="dark"] .scroll-to-top-btn {
+    background-color: var(--button-bg-dark);
+    border: 1px solid var(--border-color);
+    color: white;
+}
+[data-theme="dark"] .scroll-to-top-btn:hover {
+    background-color: var(--button-hover-dark);
+}
+/* Ícone da seta no modo dark */
+[data-theme="dark"] .scroll-to-top-btn::before {
+    color: #ecf0f1; /* Ícone branco no modo dark */
+}
+/* fim do botao modo dark scroll to top */
+/* ---------------------------------------------------------- */
+
+/* Header no modo dark */
+[data-theme="dark"] .header {
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: 0 2px 10px rgba(26, 75, 140, 0.2);
+}
+/* fim do header no dark */
+/* ---------------------------------------------------------- */
+
+/* Copyright no modo dark */
+[data-theme="dark"] .copyright {
+    border-top: 1px solid var(--border-color);
+}
+/* fim do copyright */
+/* ---------------------------------------------------------- */

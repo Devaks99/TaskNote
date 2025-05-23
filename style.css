@@ -8,16 +8,6 @@
     --button-hover-dark: #95a5a6; 
 }
 
-[data-theme="dark"] {
-    --primary-color: #ecf0f1;
-    --secondary-color: #3498db;
-    --bg-color: #000000e5;
-    --text-color: #ecf0f1;
-    --border-color: #34495e;
-    --button-bg-dark: #7f8c8d;
-    --button-hover-dark: #95a5a6;
-}
-
 * {
     margin: 0;
     padding: 0;
@@ -63,8 +53,6 @@ h1 {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     z-index: 1000;
 }
-
-
 .header > div {
     display: flex;
     gap: 10px; /* espaçamento entre os botões */
@@ -74,7 +62,7 @@ h1 {
 .container {
     width: 90%;
     max-width: 1000px;
-    padding: 150px 20px 20px; 
+    padding: 100px 20px 20px;
 }
 
 /* Botões */
@@ -87,49 +75,6 @@ h1 {
     color: white;
     transition: transform 0.2s, background-color 0.3s ease;
 }
-
-.btn:hover {
-    transform: translateY(-2px);
-    background-color: #2980b9; 
-}
-
-/* Modificação no modo dark */
-[data-theme="dark"] .btn {
-    background-color: var(--button-bg-dark); /* Botões cinza no modo escuro */
-}
-
-[data-theme="dark"] .btn:hover {
-    background-color: var(--button-hover-dark); /* Hover mais escuro */
-}
-
-[data-theme="dark"] h1 {
-    color: #ecf0f1;  
-}
-
-[data-theme="dark"] .note {
-    background-color: var(--bg-color);
-    border: 2px solid #ecf0f18e;  
-    box-shadow: 0 5px 15px rgba(141, 141, 141, 0.4);  
-}
-
-[data-theme="dark"] .scroll-to-top-btn {
-    background-color: #bebebe8c; /* Cinza escuro no modo dark */
-    color: #b8dbe4; /* Ícone branco no modo dark */
-    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.192); /* Sombra branca no modo dark */
-}
-
-/* Ícone da seta no modo dark */
-[data-theme="dark"] .scroll-to-top-btn::before {
-    color: #ecf0f1; /* Ícone branco no modo dark */
-}
-
-/* Hover no botão "Scroll to Top" no modo dark */
-[data-theme="dark"] .scroll-to-top-btn:hover {
-    background-color: #93acc7; /* Cor de fundo mais escura no modo dark */
-    box-shadow: 0 8px 15px rgba(255, 255, 255, 0.356); /* Sombra mais forte e branca no modo dark */
-    color: #333333;
-}
-
 .btn:hover {
     transform: translateY(-2px);
     background-color: #2980b9; 
@@ -141,10 +86,9 @@ h1 {
     flex-direction: column;
     align-items: center;
     gap: 30px; 
-    padding-top: 80px; 
 }
-
 .note {
+    position: relative;
     background-color: var(--bg-color);
     border: 2px solid var(--border-color);
     border-radius: 10px;
@@ -155,14 +99,20 @@ h1 {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.432);
     display: flex;
     flex-direction: column;
-    margin-bottom: 20px; /* Espaçamento entre notas */
 }
 
 .note-header {
     display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.title-wrapper {
+    display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 15px;
+    gap: 15px;
+    width: 100%;
 }
 
 .note-title {
@@ -172,12 +122,8 @@ h1 {
     border: none;
     background: transparent;
     color: var(--text-color);
-    width: 100%;
-    margin-bottom: 10px;
-}
-
-.note-title:focus {
-    outline: none;
+    padding: 5px 0;
+    border-bottom: 1px solid var(--border-color);
 }
 
 .note-content {
@@ -190,13 +136,11 @@ h1 {
     line-height: 1.5;
     min-height: 150px;
     width: 100%;
+    margin-top: 10px;
 }
-
 .note-content:focus {
     outline: none;
 }
-
-/* Ícones de ações dentro das notas */
 .note-actions .icon-btn {
     background: none;
     border: none;
@@ -205,6 +149,17 @@ h1 {
     font-size: 20px;
     padding: 5px;
     transition: color 0.3s ease;
+}
+
+/* Mantém o título alinhado à esquerda */
+.note-title {
+    flex-grow: 1;
+    margin-right: 15px; /* Espaço entre título e ícones */
+}
+
+/* Ajuste para o conteúdo ficar abaixo */
+.note-content {
+    width: 100%;
 }
 
 /* Hover para os ícones no modo claro */
@@ -224,30 +179,18 @@ h1 {
     color: #e74c3c; /* Vermelho para excluir no hover */
 }
 
-/* Alterações no modo dark */
-[data-theme="dark"] .note-actions .icon-btn:hover {
-    transform: scale(1.1); /* Efeito de aumentar o ícone */
-}
-
-[data-theme="dark"] .note-actions .icon-edit:hover {
-    color: #7f8c8d; /* Cinza mais escuro para editar no hover */
-}
-
-[data-theme="dark"] .note-actions .icon-download:hover {
-    color: #2ecc71; /* Verde claro para download no hover */
-}
-
-[data-theme="dark"] .note-actions .icon-delete:hover {
-    color: #f39c12; /* Vermelho mais claro para excluir no hover */
-}
-
-
 /* Ações na nota */
 .note-actions {
+    position: absolute;
+    top: 15px;
+    right: 0;
     display: flex;
     gap: 15px; 
     margin-top: 15px;
     justify-content: center; 
+    margin-left: 0;
+    margin: 0;
+    margin-right: 50px;
 }
 
 .icon-btn {
@@ -310,7 +253,6 @@ h1 {
     transition: all 0.3s ease;
 }
 
-
 /* Hover no botão "Scroll to Top" */
 .scroll-to-top-btn:hover {
     background-color: #2980b9;
@@ -319,11 +261,11 @@ h1 {
 }
 
 
-/* RESPONSIVIDADE */
+/*  >>>>>>>>>>>>>>>>>>>>>>>>> RESPONSIVIDADE <<<<<<<<<<<<<<<<<<<<<<<<<< */
 @media (max-width: 768px) {
     .container {
         width: 95%;
-        padding-top: 120px; 
+        padding-top: 90px;
         display: flex;
         flex-direction: column;
         align-items: center; /* Centraliza o conteúdo do container */
@@ -349,13 +291,15 @@ h1 {
     }
 
     /* Container de notas */
+    .note-header {
+        gap: 10px; /* Espaço menor entre título e conteúdo no mobile */
+    }
     .notes-container {
         width: 100%;
         padding-top: 20px; 
         display: flex;
         justify-content: center; /* Centraliza o container de notas */
     }
-
     .note {
         padding: 20px;
         width: 100%; 
@@ -364,14 +308,23 @@ h1 {
         margin: 0 auto; /* Centraliza o bloco de notas */
         min-height: 560px;
     }
-
     /* Ícones de editar, download e excluir */
     .note-actions {
         gap: 5px; /* espaçamento entre os ícones */
         display: flex;
-        justify-content: center; /* Centraliza os ícones dentro do bloco de notas */
-        margin-left: -100px;
-        margin-top: 0;
+        margin-left: 0; 
+        margin-top: 10px;
+        align-self: flex-end;
+    }
+ 
+    .title-wrapper {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .title-and-actions {
+        flex-direction: column;
+        align-items: flex-start;
     }
 
     h1 {
@@ -379,7 +332,6 @@ h1 {
         margin-left: 0; /* Alinha o título à esquerda */
         cursor: pointer;
     }
-
     .scroll-to-top-btn {
         bottom: 15px;
         right: 15px;
